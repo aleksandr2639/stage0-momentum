@@ -1,0 +1,417 @@
+@font-face {
+  font-family: 'Arial-MT';
+  src: url("assets/fonts/Arial-MT.woff"); /* Путь к файлу со шрифтом */
+ }
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  min-width: 480px;
+  min-height: 100vh;
+  font-family: 'Arial', sans-serif;
+  font-size: 16px;
+  color: #fff;
+  text-align: center;
+ /*background-color: rgba(204, 204, 204, 0.5);*/
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-blend-mode: multiply;
+  transition: 1s ease-in-out;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  width: 100%;
+  height: 30vh;
+  min-height: 220px;  
+  padding: 20px;
+}
+
+.player {
+  width: 200px;
+  margin-top: 20px;
+  padding: 12px;
+  background-color: rgb(128 128 128 / 43%);
+  border-radius: 16px;
+}
+
+.song {
+  margin-bottom: 20px;
+}
+
+.progress-container {
+  display: flex;
+  margin-bottom: 20px;
+  height: 10px;
+  background-color: #c2c2c2;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.progress {
+  width: 10%;
+  height: 6px;
+  align-self: center;
+  margin: 0 2px;
+  background-color: #ffffff;
+  border-radius: 5px;
+}
+
+.settings-songs {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.time-song {
+  display: flex;
+  align-items: center;
+}
+
+.timer-header::after {
+  content: '/';
+  padding: 0 2px;
+}
+
+.volume {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.volume-slider {
+  width: 70px;
+}
+
+
+.volume-button {
+  background-image:url(assets/svg/volume-loud.svg);
+}
+
+.volume-button,
+.stop  {
+  background-color: transparent;
+  border: 0;
+  width: 24px;
+  height: 24px;
+  background-size: 24px 24px;
+  background-repeat: no-repeat;
+}
+
+.stop {
+  background-image:url(assets/svg/volume-stop.svg);
+}
+
+.volume-container {
+  width: 70px;
+  display: flex;
+  height: 10px;
+  background-color: #c2c2c2;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.volume-bar {
+  width: 10%;
+  height: 6px;
+  align-self: center;
+  margin: 0 2px;
+  background-color: #ffffff;
+  border-radius: 5px;
+}
+
+.player-controls {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 28px;
+}
+
+.play-list {
+  text-align: left;
+}
+
+.music-playlist {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.music-playlist:last-child {
+  margin-bottom: 0;
+}
+
+.play-item {
+  align-self: center;
+  padding: 5px;
+  list-style: none;
+  opacity: .8;
+  cursor: pointer;
+  transition: .3s;
+}
+
+.play-item:hover {
+  opacity: 1;
+}
+
+.item-active::before {
+  color: #C5B358;
+}
+
+.player-icon,
+.slider-icon,
+.change-quote {
+  width: 32px;
+  height: 32px;
+  background-size: 32px 32px;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-color: transparent;
+  border: 0;
+  outline: 0;
+  opacity: .8;
+  cursor: pointer;
+  transition: .3s;  
+}
+
+.player-icon:hover,
+.slider-icon:hover,
+.change-quote:hover {
+  opacity: 1;
+}
+
+.player-icon:active,
+.slider-icon:active,
+.change-quote:active {
+  border: 0;
+  outline: 0;  
+  transform: scale(1.1);
+}
+
+.play {
+  width: 40px;
+  height: 40px;
+  background-size: 40px 40px;
+  background-image: url("assets/svg/play.svg");
+}
+
+.active {
+  background-image: url("/assets/svg/pause.svg");
+}
+
+.play-prev {
+  background-image: url("/assets/svg/play-prev.svg");
+}
+
+.play-next {
+  background-image: url("/assets/svg/play-next.svg");
+}
+
+.player-icon-list {
+  width: 24px;
+  height: 24px;
+  background-size: 24px 24px;
+  background-image: url(/assets/svg/play.svg);
+}
+
+.weather {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+  row-gap: 5px;
+  width: 180px;
+  min-height: 200px;  
+  text-align: left;
+  padding: 12px;
+  background-color: rgb(128 128 128 / 43%);
+  border-radius: 16px;
+}
+
+.weather-error {
+  margin-top: -10px;
+}
+
+.description-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-items: center;
+  column-gap: 12px;
+}
+
+.weather-icon {
+  font-size: 44px;
+}
+
+.city {
+  width: 100%;
+  height: 34px;
+  padding: 5px;
+  font-size: 20px;
+  line-height: 24px;
+  color: #fff;  
+  border: 0;
+  outline: 0;
+  border-bottom: 1px solid #fff;
+  background-color: transparent;
+}
+
+.city::placeholder {  
+  font-size: 20px;
+  color: #fff;
+  opacity: .6;
+}
+
+.main {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 40vh;
+  min-height: 260px;  
+  padding: 20px;
+}
+
+.slider-icon {
+  position: absolute;
+  top: 50%;
+  margin-top: -16px;
+  cursor: pointer;
+}
+
+.slide-prev {
+  left: 20px;
+  background-image: url("/assets/svg/slider-prev.svg");
+}
+
+.slide-next {
+  right: 20px;
+  background-image: url("/assets/svg/slider-next.svg");
+}
+
+.time {
+  min-height: 124px;
+  margin-bottom: 43px;
+  font-family: 'Arial-MT';
+  font-size: 120px;
+  letter-spacing: -4px;  
+}
+
+.date {
+  min-height: 28px;
+  font-size: 28px;
+  margin-bottom: 20px;
+}
+
+.greeting-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: stretch;
+  align-items: center;
+  gap: 12px;
+  min-height: 48px;
+  width: 100vw;
+  font-size: 40px;
+}
+
+.greeting {
+  flex: 1;  
+  padding: 10px;
+  text-align: right;
+}
+
+.name {
+  flex: 1;
+  max-width: 50%;
+  padding: 10px;
+  font-size: 40px;
+  text-align: left;
+  color: #fff;
+  background-color: transparent;
+  border: 0;
+  outline: 0;
+}
+
+.name::placeholder {
+  color: #fff;
+  opacity: .6;
+}
+
+.footer {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+  width: 100%;
+  height: 30vh;
+  min-height: 160px;  
+  padding: 20px;
+}
+
+.change-quote {
+  margin-bottom: 30px;
+  background-image: url("/assets/svg/reload.svg");  
+}
+
+.quote {
+  min-height: 32px;
+}
+
+.author {
+  min-height: 20px;
+}
+
+.lang-button {
+  display: flex;
+  align-self: flex-start;
+}
+
+
+.lang {
+  background: transparent;
+  border: 0;
+  color: white;
+  font-size: 18px;
+  padding: 2px;
+  margin-right: 10px;
+  font-weight: 500;
+  cursor: pointer;
+  border: 2px solid white;
+  border-radius: 5px;
+}
+
+@media (max-width: 768px) {
+  .time {
+    min-height: 80px;
+    font-size: 72px;    
+  }
+
+  .greeting-container {
+    min-height: 40px;
+    font-size: 32px;
+  }
+
+  .greeting {
+    padding: 5px;
+  }
+
+  .name {
+    font-size: 32px;
+    padding: 5px;
+  }
+}
+
+
+
